@@ -1,0 +1,13 @@
+---
+applications:
+  - name: simple-spring-ai
+    path: build/libs/simple-spring-ai-0.0.1-SNAPSHOT.jar
+    memory: 1G
+    disk_quota: 1G
+    instances: 1
+    buildpacks:
+      - java_buildpack_offline
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 21.+ } }'
+    services:
+      - llama-model
